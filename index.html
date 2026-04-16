@@ -19,8 +19,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #0a0a0a;
-            color: #fff;
+            background: #ffffff;
+            color: #0a0a0a;
             overflow-x: hidden;
         }
 
@@ -35,7 +35,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
         }
 
@@ -77,7 +77,7 @@
         }
 
         nav ul li a {
-            color: #fff;
+            color: #0a0a0a;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -142,7 +142,7 @@
         .hero .tagline {
             font-size: clamp(1.1rem, 3.5vw, 2rem);
             font-weight: 900;
-            color: #fff;
+            color: #ffffff;
             letter-spacing: 4px;
             text-transform: uppercase;
             animation: fadeIn 1.5s ease 0.5s both;
@@ -176,6 +176,7 @@
             text-align: center;
             margin-bottom: 60px;
             position: relative;
+            color: #0a0a0a;
         }
 
         .section-title::after {
@@ -192,7 +193,7 @@
 
         /* About Section */
         .about {
-            background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%);
+            background: #ffffff;
             padding: 120px 50px;
         }
 
@@ -205,7 +206,7 @@
         .about-content p {
             font-size: 1.3rem;
             line-height: 1.8;
-            color: #b0b0b0;
+            color: #333333;
         }
 
         .about-content .highlight {
@@ -215,7 +216,7 @@
 
         /* Skills Section */
         .skills {
-            background: #151515;
+            background: #ffffff;
             padding: 120px 50px;
         }
 
@@ -228,12 +229,12 @@
         }
 
         .skill-card {
-            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            background: linear-gradient(145deg, #ffffff, #f8f8f8);
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
             transition: all 0.4s ease;
-            border: 1px solid transparent;
+            border: 2px solid #e8e8e8;
             position: relative;
             overflow: hidden;
         }
@@ -242,19 +243,33 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(254,202,87,0.1), rgba(72,219,251,0.1), rgba(255,159,243,0.1));
+            background: linear-gradient(135deg, var(--accent), transparent);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
 
         .skill-card:hover::before {
-            opacity: 1;
+            opacity: 0.15;
         }
 
         .skill-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(255, 107, 107, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card i {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            transition: transform 0.4s ease;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .skill-card:hover i {
+            transform: scale(1.15) rotate(5deg);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
 
         .skill-card:nth-child(1) { --accent: #ff6b6b; }
@@ -263,30 +278,16 @@
         .skill-card:nth-child(4) { --accent: #ff9ff3; }
         .skill-card:nth-child(5) { --accent: #1dd1a1; }
 
-        .skill-card i {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: transform 0.4s ease;
-        }
-
-        .skill-card:hover i {
-            transform: scale(1.1);
-        }
-
         .skill-card h3 {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: 1.2rem;
-            color: #fff;
+            color: #0a0a0a;
         }
 
         /* Projects Section */
         .projects {
-            background: linear-gradient(180deg, #151515 0%, #0a0a0a 100%);
+            background: #ffffff;
             padding: 120px 50px;
         }
 
@@ -305,11 +306,12 @@
             aspect-ratio: 4/3;
             cursor: pointer;
             transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .project-card:hover {
             transform: scale(1.03);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
         }
 
         .project-card img {
@@ -326,7 +328,7 @@
         .project-card .overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.9) 100%);
+            background: linear-gradient(180deg, transparent 40%, rgba(255,255,255,0.95) 100%);
             display: flex;
             align-items: flex-end;
             padding: 30px;
@@ -343,7 +345,7 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: 1.3rem;
-            color: #fff;
+            color: #0a0a0a;
         }
 
         .placeholder-img {
@@ -353,8 +355,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1a1a1a, #252525);
-            color: #555;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            color: #999;
             font-size: 3rem;
         }
 
@@ -369,7 +371,7 @@
 
         /* Contact Section */
         .contact {
-            background: #0a0a0a;
+            background: #ffffff;
             padding: 120px 50px;
             text-align: center;
         }
@@ -381,7 +383,7 @@
 
         .contact-content p {
             font-size: 1.2rem;
-            color: #b0b0b0;
+            color: #333333;
             margin-bottom: 40px;
         }
 
@@ -483,7 +485,7 @@
 
         /* Footer */
         footer {
-            background: #050505;
+            background: #f0f0f0;
             padding: 30px;
             text-align: center;
             color: #555;
@@ -563,7 +565,7 @@
         .menu-toggle span {
             width: 30px;
             height: 3px;
-            background: #fff;
+            background: #0a0a0a;
             border-radius: 2px;
             transition: all 0.3s ease;
         }
@@ -595,7 +597,7 @@
                 position: absolute;
                 top: 60px;
                 right: 20px;
-                background: rgba(10, 10, 10, 0.95);
+                background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 align-items: flex-start;
@@ -603,7 +605,7 @@
                 padding: 10px 0;
                 border-radius: 10px;
                 min-width: 140px;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             }
 
             nav ul.active {
@@ -619,6 +621,7 @@
                 padding: 10px 18px;
                 display: block;
                 width: 100%;
+                color: #0a0a0a;
             }
 
             .menu-toggle {
