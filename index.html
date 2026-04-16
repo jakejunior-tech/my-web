@@ -30,7 +30,7 @@
             top: 0;
             left: 0;
             right: 0;
-            padding: 20px 50px;
+            padding: 15px 50px 15px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,13 +40,34 @@
         }
 
         nav .logo {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        nav .logo img {
+            display: block;
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav .logo {
+            height: 50px;
+        }
+
+        nav .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
         nav ul {
@@ -95,7 +116,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0), rgba(10, 10, 10, 0), rgba(10, 10, 10, 0));
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .hero-content {
@@ -566,29 +587,38 @@
         /* Responsive - Tablets (768px) */
         @media (max-width: 768px) {
             nav {
-                padding: 15px 25px;
+                padding: 12px 20px 12px 0;
             }
 
             nav ul {
                 display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(10, 10, 10, 0.98);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(10px);
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
+                align-items: flex-start;
+                gap: 0;
+                padding: 10px 0;
+                border-radius: 10px;
+                min-width: 140px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             }
 
             nav ul.active {
                 display: flex;
             }
 
+            nav ul li {
+                width: 100%;
+            }
+
             nav ul li a {
-                font-size: 1.3rem;
+                font-size: 0.9rem;
+                padding: 10px 18px;
+                display: block;
+                width: 100%;
             }
 
             .menu-toggle {
@@ -740,6 +770,15 @@
             }
 
             nav {
+                padding: 10px 15px 10px 0;
+            }
+        }
+
+            nav {
+                padding: 8px 12px 8px 8px;
+            }
+
+            nav {
                 padding: 12px 15px;
             }
 
@@ -781,7 +820,9 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">NN</div>
+        <div class="logo">
+            <img src="WhatsApp Image 2026-04-16 at 3.21.56 AM.jpeg" alt="Nengimote Logo">
+        </div>
         <ul id="nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
