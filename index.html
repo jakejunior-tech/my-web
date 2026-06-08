@@ -108,7 +108,10 @@
             align-items: center;
             text-align: center;
             position: relative;
-            background-image: url('WhatsApp Image 2026-05-16 at 8.38.44 PM.jpeg');
+            background-color: #0f0c29;
+            background-image:
+                linear-gradient(135deg, rgba(15, 12, 41, 0.85), rgba(48, 43, 99, 0.6)),
+                url('WhatsApp Image 2026-05-16 at 8.38.44 PM.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -686,6 +689,15 @@
 
             .hero .tagline {
                 letter-spacing: 2px;
+            }
+        }
+
+        /* Cap background at native size on large screens */
+        @media (min-width: 1255px) {
+            .hero {
+                background-size: cover, 1254px auto;
+                background-position: center;
+                background-repeat: no-repeat;
             }
         }
 
