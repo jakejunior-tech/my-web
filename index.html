@@ -1056,6 +1056,8 @@
 
             // Open WhatsApp after 2 seconds
             setTimeout(() => {
+                emojiPopup.classList.remove('show');
+                emojiPopup.classList.add('hide');
                 window.location.href = 'https://wa.me/2348145173339';
             }, 2000);
         });
