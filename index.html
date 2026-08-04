@@ -1002,7 +1002,7 @@
     </section>
 
     <!-- Emoji Popup -->
-    <div class="emoji-popup" id="emoji-popup">😊</div>
+    <div class="emoji-popup" id="emoji-popup">🤝</div>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -1047,16 +1047,17 @@
         const whatsappBtn = document.getElementById('whatsapp-btn');
         const emojiPopup = document.getElementById('emoji-popup');
 
-        whatsappBtn.addEventListener('click', () => {
+        whatsappBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
             // Show emoji
             emojiPopup.classList.remove('hide');
             emojiPopup.classList.add('show');
 
-            // Hide emoji after animation
+            // Open WhatsApp after 2 seconds
             setTimeout(() => {
-                emojiPopup.classList.remove('show');
-                emojiPopup.classList.add('hide');
-            }, 800);
+                window.location.href = 'https://wa.me/2348145173339';
+            }, 2000);
         });
 
         // Scroll Animation
