@@ -1012,7 +1012,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Designed with <span>❤️</span> by Nengimote Nengite</p>
+        <p>Designed by Nengimote Nengite</p>
     </footer>
 
     <script>
@@ -1029,6 +1029,18 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
+        });
+
+        // Close menu on scroll
+        window.addEventListener('scroll', () => {
+            navLinks.classList.remove('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
         });
 
         // WhatsApp Button with Emoji Animation
