@@ -1584,11 +1584,10 @@
          Split into Websites and Designs. Click any image to view it larger.
          Websites = 1 card now, add more by copying the "ADD MORE WEBSITES" card.
          Designs = 5 cards, add more by copying the "ADD MORE DESIGNS" card.
-         REPLACE: every [PROJECT NAME] and one-line description.
-         The Designs cards are image only - no title or caption.
-         REPLACE: each Visit site href, and the alt text on every image.
-         The alt text is the ONLY description on the Designs cards, so it
-         matters more there than anywhere else on the page. -->
+         The single Websites card is fully filled in - use it as the example to
+         copy for any further website projects.
+         The Designs cards are image only, so their alt text is the ONLY
+         description they have. Replace every one of them. -->
     <section class="work" id="work">
         <h2 class="section-title">Our Work</h2>
 
@@ -1596,15 +1595,31 @@
         <h3 class="sub-title"><i class="fas fa-laptop-code"></i> Websites</h3>
         <div class="work-grid">
 
-            <!-- REPLACE: title, description, URL and alt text -->
+            <!-- REPLACE: the image src (add your screenshot). No alt text on this one. -->
             <article class="work-card animate-on-scroll" style="--accent: #48dbfb;">
                 <div class="work-media">
-                    <img src="WhatsApp Image 2026-04-16 at 12.36.38 PM.jpeg" alt="REPLACE: screenshot of the website built for [PROJECT NAME]">
+                    <img src="WhatsApp Image 2026-04-16 at 12.36.38 PM.jpeg">
                 </div>
                 <div class="work-body">
-                    <h3>[PROJECT NAME]</h3>
-                    <p class="work-desc">[One line: what this website does for the client.]</p>
-                    <a href="#" class="visit-btn" target="_blank" rel="noopener">
+                    <h3>Kingsley Jackson Consults</h3>
+                    <p class="work-desc">Business website for an estate surveying and valuers firm, with services, team, portfolio and an enquiry form.</p>
+                    <a href="https://kingjackconsults-nine.vercel.app/" class="visit-btn" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> Visit site
+                    </a>
+                </div>
+            </article>
+
+            <!-- REPLACE: the image src. Add a screenshot of the 6thwearz site
+                 to this folder and make the file name match exactly, or the
+                 card shows a broken image. No alt text on this one either. -->
+            <article class="work-card animate-on-scroll" style="--accent: #ff9ff3;">
+                <div class="work-media">
+                    <img src="6thwearz-screenshot.jpg">
+                </div>
+                <div class="work-body">
+                    <h3>6thwearz</h3>
+                    <p class="work-desc">Online store for a premium clothing brand, with product listings, a cart and a customer enquiry form.</p>
+                    <a href="https://business-2-three.vercel.app/" class="visit-btn" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> Visit site
                     </a>
                 </div>
@@ -1614,10 +1629,10 @@
                 ADD MORE WEBSITES BELOW
                 Copy the card above, then change these five things only:
                   1. the image src
-                  2. [PROJECT NAME]
+                  2. the project title
                   3. the one-line description
-                  4. the Visit site href  (replace the # with the real link)
-                  5. the alt text
+4. the Visit site href
+                 5. the alt text (or leave it off, like the cards above)
                 No CSS or JavaScript changes needed - the grid grows on its own.
             -->
 
@@ -1937,6 +1952,7 @@
 
         // Placeholder links (href="#") are not live yet. Explain instead of
         // jumping to the top of the page. This stops once you replace them.
+        // No links currently use href="#", so this matches nothing today.
         document.querySelectorAll('a[href="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -2047,21 +2063,25 @@
       7.  Business price          -> currently ₦350,000
       8.  Premium price           -> currently ₦650,000
 
-    OUR WORK - WEBSITES  (1 card)
-      9.  [PROJECT NAME]          -> the real title
-      10. [One line: what this website does for the client.]  -> one line
-      11. Visit site href          -> replace the "#" with the real link
-            TO ADD MORE WEBSITES: copy the card marked
-            "ADD MORE WEBSITES BELOW" and change the image, the title,
-            the description, the Visit site href and the alt text.
+    OUR WORK - WEBSITES  (2 cards)
+      9.  Kingsley Jackson Consults   -> https://kingjackconsults-nine.vercel.app/
+      10. 6thwearz                     -> https://business-2-three.vercel.app/
+            Neither card has alt text. Both still need a screenshot: the
+            Kingsley image is a placeholder, and the 6thwearz card points at
+            "6thwearz-screenshot.jpg", which is not in the folder yet - that
+            card shows a broken image until you add the file and match the
+            name exactly.
+            TO ADD MORE WEBSITES: copy a card and change the image, the
+            title, the description and the Visit site href.
 
     OUR WORK - DESIGNS  (5 cards - image only, no title or caption)
-      12. Nothing else to replace.
+      11. The 5 alt texts         -> describe each design properly; these
+            are the only description these cards have.
             TO ADD MORE DESIGNS: copy the card marked
             "ADD MORE DESIGNS BELOW" and change the image and the alt text.
 
     TESTIMONIALS  (1 card - Kingsley Anthony Jackson)
-      13. The logo file name in the testimonial .avatar -> currently
+      12. The logo file name in the testimonial .avatar -> currently
             "WhatsApp Image 2026-10-05 at 1.21.49 PM.jpeg". If that file is
             missing the initials "KJ" are shown instead, so the card still
             looks right.
@@ -2070,11 +2090,12 @@
             colour. The grid and the single-card width rule adjust themselves.
 
     ALT TEXT  (search: alt=)
-      14. "NGT Studio logo"       -> fine as is
-      15. The 6 project images    -> describe each project properly
-            1 website + 5 designs, replace the whole alt="REPLACE: ..." value
-            The 5 Designs cards have no visible text, so their alt text is
-            the only description a visitor or Google gets.
+      13. "NGT Studio logo"       -> fine as is
+      14. The 5 design images    -> describe each design properly
+            replace the whole alt="REPLACE: ..." value on each Designs card
+            The Designs cards have no visible text, so their alt text is
+            the only description a visitor or Google gets. The two Websites
+            cards have no alt text by choice - leave them that way.
 
     HANDSHAKE ANIMATION
       - Every WhatsApp button (Send Enquiry, the 3 Get Started
