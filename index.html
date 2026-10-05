@@ -36,7 +36,8 @@
     <meta name="twitter:image" content="https://my-web-seven-pink.vercel.app/WhatsApp%20Image%202026-05-16%20at%208.38.44%20PM.jpeg">
 
     <!-- Structured data: helps Google show NGT Studio as a local business
-         REPLACE: "url", "email" and add your real street address if you have one -->
+         REPLACE: "url" and add your real street address if you have one.
+         No email is listed on purpose - WhatsApp is the only contact route. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -46,7 +47,6 @@
         "url": "https://my-web-seven-pink.vercel.app/",
         "image": "https://my-web-seven-pink.vercel.app/WhatsApp%20Image%202026-05-16%20at%208.38.44%20PM.jpeg",
         "telephone": "+2348145173339",
-        "email": "REPLACE-WITH-YOUR-EMAIL@example.com",
         "areaServed": { "@type": "Country", "name": "Nigeria" },
         "priceRange": "NGN",
         "founder": "Nengimote Nengite",
@@ -856,69 +856,6 @@
             margin-bottom: 40px;
         }
 
-        .whatsapp-btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 14px 30px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #fff;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-btn i {
-            font-size: 1.8rem;
-        }
-
-        /* Email + Instagram rows */
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-            margin: 34px 0 46px;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 22px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: #0a0a0a;
-            background: #ffffff;
-            border: 2px solid #e8e8e8;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link i {
-            font-size: 1rem;
-            color: var(--accent);
-        }
-
-        .contact-link:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent);
-            box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.3);
-        }
-
         /* Enquiry form - no server needed, it opens WhatsApp with the message */
         .enquiry-form {
             max-width: 640px;
@@ -1214,7 +1151,7 @@
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateY(50px); }
+            from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -1223,7 +1160,7 @@
         }
 
         .animate-on-scroll.animated {
-            animation: slideIn 0.8s ease forwards;
+            animation: slideIn 0.45s ease forwards;
         }
 
         /* Mobile Menu */
@@ -1336,14 +1273,6 @@
                 gap: 25px;
             }
 
-            .whatsapp-btn {
-                gap: 10px;
-            }
-
-            .whatsapp-btn i {
-                font-size: 1.5rem;
-            }
-
             .emoji-popup {
                 font-size: 6rem;
             }
@@ -1431,23 +1360,6 @@
 
             .contact-content p {
                 font-size: 1rem;
-            }
-
-            .whatsapp-btn {
-                gap: 10px;
-            }
-
-            .contact-links {
-                gap: 10px;
-                margin: 28px 0 36px;
-            }
-
-            .contact-link {
-                width: 100%;
-                justify-content: center;
-                font-size: 0.84rem;
-                padding: 12px 16px;
-                overflow-wrap: anywhere;
             }
 
             .float-wa {
@@ -1672,14 +1584,13 @@
          Split into Websites and Designs. Click any image to view it larger.
          Websites = 1 card now, add more by copying the "ADD MORE WEBSITES" card.
          Designs = 5 cards, add more by copying the "ADD MORE DESIGNS" card.
-         REPLACE: every [PROJECT NAME], [DESIGN NAME] and one-line description.
-         REPLACE: each Visit site href, and the alt text on every image. -->
+         REPLACE: every [PROJECT NAME] and one-line description.
+         The Designs cards are image only - no title or caption.
+         REPLACE: each Visit site href, and the alt text on every image.
+         The alt text is the ONLY description on the Designs cards, so it
+         matters more there than anywhere else on the page. -->
     <section class="work" id="work">
         <h2 class="section-title">Our Work</h2>
-        <p class="section-note animate-on-scroll">
-            <span class="spark">✦</span> Click on each image to view a clearer version
-            <span class="spark">✦</span>
-        </p>
 
         <!-- ---------- Websites ---------- -->
         <h3 class="sub-title"><i class="fas fa-laptop-code"></i> Websites</h3>
@@ -1714,67 +1625,51 @@
 
         <!-- ---------- Designs ---------- -->
         <h3 class="sub-title"><i class="fas fa-palette"></i> Designs</h3>
+        <p class="section-note animate-on-scroll">
+            <span class="spark">✦</span> Click on each image to view a clearer version
+            <span class="spark">✦</span>
+        </p>
         <div class="work-grid">
 
-            <!-- REPLACE: title, description and alt text -->
+            <!-- REPLACE: the alt text on the image below -->
             <article class="work-card animate-on-scroll" style="--accent: #ff9ff3;">
                 <div class="work-media">
                     <img src="WhatsApp Image 2026-04-16 at 12.38.17 AM.jpeg" alt="REPLACE: describe this design, e.g. logo and brand colours for [CLIENT]">
                 </div>
-                <div class="work-body">
-                    <h3>[DESIGN NAME]</h3>
-                    <p class="work-desc">[One line: what you designed and what it was for.]</p>
-                </div>
             </article>
 
-            <!-- REPLACE: title, description and alt text -->
+            <!-- REPLACE: the alt text on the image below -->
             <article class="work-card animate-on-scroll" style="--accent: #feca57;">
                 <div class="work-media">
                     <img src="WhatsApp Image 2026-05-05 at 10.50.05 AM.jpeg" alt="REPLACE: describe this design, e.g. social media graphics for [CLIENT]">
                 </div>
-                <div class="work-body">
-                    <h3>[DESIGN NAME]</h3>
-                    <p class="work-desc">[One line: what you designed and what it was for.]</p>
-                </div>
             </article>
 
-            <!-- REPLACE: title, description and alt text -->
+            <!-- REPLACE: the alt text on the image below -->
             <article class="work-card animate-on-scroll" style="--accent: #48dbfb;">
                 <div class="work-media">
                     <img src="WhatsApp Image 2026-05-04 at 10.56.32 AM.jpeg" alt="REPLACE: describe this design, e.g. poster and flyer set for [CLIENT]">
                 </div>
-                <div class="work-body">
-                    <h3>[DESIGN NAME]</h3>
-                    <p class="work-desc">[One line: what you designed and what it was for.]</p>
-                </div>
             </article>
 
-            <!-- REPLACE: title, description and alt text -->
+            <!-- REPLACE: the alt text on the image below -->
             <article class="work-card animate-on-scroll" style="--accent: #ff6b6b;">
                 <div class="work-media">
                     <img src="WhatsApp Image 2026-04-16 at 12.18.24 AM.jpeg" alt="REPLACE: describe this design, e.g. logo and brand colours for [CLIENT]">
                 </div>
-                <div class="work-body">
-                    <h3>[DESIGN NAME]</h3>
-                    <p class="work-desc">[One line: what you designed and what it was for.]</p>
-                </div>
             </article>
 
-            <!-- REPLACE: title, description and alt text -->
+            <!-- REPLACE: the alt text on the image below -->
             <article class="work-card animate-on-scroll" style="--accent: #1dd1a1;">
                 <div class="work-media">
                     <img src="WhatsApp Image 2026-04-16 at 12.31.18 AM.jpeg" alt="REPLACE: describe this design, e.g. social media graphics for [CLIENT]">
-                </div>
-                <div class="work-body">
-                    <h3>[DESIGN NAME]</h3>
-                    <p class="work-desc">[One line: what you designed and what it was for.]</p>
                 </div>
             </article>
 
             <!--
                 ADD MORE DESIGNS BELOW
-                Copy any card above, then change the image src, [DESIGN NAME],
-                the one-line description and the alt text.
+                Copy any card above, then change the image src and the alt
+                text. The Designs cards carry no title or caption.
             -->
 
         </div>
@@ -1844,27 +1739,12 @@
     </section>
 
     <!-- Contact Section
-         REPLACE: [EMAIL] and [INSTAGRAM LINK] below.
+         WhatsApp is the only contact route - no email or social links.
          The enquiry form needs no server - it opens WhatsApp with the message filled in. -->
     <section class="contact" id="contact">
         <h2 class="section-title">Contact</h2>
         <div class="contact-content animate-on-scroll">
             <p>Have a project in mind? Let's create something amazing together!</p>
-            <a href="https://wa.me/2348145173339" class="whatsapp-btn" id="whatsapp-btn" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i>
-                Let's Chat
-            </a>
-
-            <div class="contact-links">
-                <!-- REPLACE: your email address -->
-                <a href="mailto:[EMAIL]" class="contact-link" style="--accent: #feca57;">
-                    <i class="fas fa-envelope"></i> [EMAIL]
-                </a>
-                <!-- REPLACE: your Instagram profile link -->
-                <a href="#" class="contact-link" style="--accent: #ff9ff3;" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram"></i> [INSTAGRAM LINK]
-                </a>
-            </div>
 
             <!-- Enquiry form -->
             <form class="enquiry-form" id="enquiry-form" novalidate>
@@ -1952,7 +1832,7 @@
 
         // ============================================================
         //  WhatsApp + handshake emoji
-        //  Every WhatsApp action on the page (Let's Chat, the enquiry
+        //  Every WhatsApp action on the page (the enquiry
         //  form, the pricing Get Started buttons and the floating button)
         //  runs through these two helpers, so they all behave the same.
         // ============================================================
@@ -2012,8 +1892,8 @@
             });
         };
 
-        // Catches the Let's Chat button, the 3 pricing Get Started buttons
-        // and the floating WhatsApp button in one go.
+        // Catches the 3 pricing Get Started buttons and the floating
+        // WhatsApp button in one go.
         document.querySelectorAll('a[href*="wa.me"]').forEach(animateWhatsAppLink);
 
         // Scroll Animation
@@ -2150,41 +2030,38 @@
         PLACEHOLDERS TO REPLACE  (Ctrl+F the "[")
     ============================================================
     CONTACT
-      1.  [EMAIL]                 -> your email address (mailto link + visible text)
-      2.  [INSTAGRAM LINK]        -> your Instagram profile URL
-          (the href of that link is currently "#" - replace it too)
+      1.  Nothing to replace - WhatsApp is the only contact route.
+          Email and Instagram were removed on purpose, including the
+          "email" field in the JSON-LD below.
 
     SITE ADDRESS  (search: my-web-seven-pink.vercel.app)
-      3.  rel="canonical"         -> your live site address
-      4.  og:url and og:image     -> your live site address
-      5.  twitter:image           -> your live site address
-      6.  JSON-LD "url" + "image" -> your live site address
-      7.  JSON-LD "email"         -> your email address
-          (all 6 currently point at https://my-web-seven-pink.vercel.app/ -
-           change them all together if you move the site)
+      2.  rel="canonical"         -> your live site address
+      3.  og:url and og:image     -> your live site address
+      4.  twitter:image           -> your live site address
+      5.  JSON-LD "url" + "image" -> your live site address
+(all 4 currently point at https://my-web-seven-pink.vercel.app/ -
+            change them all together if you move the site)
 
     PRICING  (search: REPLACE: )
-      8.  Starter price           -> currently ₦150,000
-      9.  Business price          -> currently ₦350,000
-      10. Premium price           -> currently ₦650,000
+      6.  Starter price           -> currently ₦150,000
+      7.  Business price          -> currently ₦350,000
+      8.  Premium price           -> currently ₦650,000
 
     OUR WORK - WEBSITES  (1 card)
-      11. [PROJECT NAME]          -> the real title
-      12. [One line: what this website does for the client.]  -> one line
-      13. Visit site href          -> replace the "#" with the real link
+      9.  [PROJECT NAME]          -> the real title
+      10. [One line: what this website does for the client.]  -> one line
+      11. Visit site href          -> replace the "#" with the real link
             TO ADD MORE WEBSITES: copy the card marked
             "ADD MORE WEBSITES BELOW" and change the image, the title,
             the description, the Visit site href and the alt text.
 
-    OUR WORK - DESIGNS  (5 cards)
-      14. [DESIGN NAME]           -> real title, one per card
-      15. [One line: what you designed and what it was for.]   -> one per card
+    OUR WORK - DESIGNS  (5 cards - image only, no title or caption)
+      12. Nothing else to replace.
             TO ADD MORE DESIGNS: copy the card marked
-            "ADD MORE DESIGNS BELOW" and change the image, the title,
-            the description and the alt text.
+            "ADD MORE DESIGNS BELOW" and change the image and the alt text.
 
     TESTIMONIALS  (1 card - Kingsley Anthony Jackson)
-      16. The logo file name in the testimonial .avatar -> currently
+      13. The logo file name in the testimonial .avatar -> currently
             "WhatsApp Image 2026-10-05 at 1.21.49 PM.jpeg". If that file is
             missing the initials "KJ" are shown instead, so the card still
             looks right.
@@ -2193,12 +2070,14 @@
             colour. The grid and the single-card width rule adjust themselves.
 
     ALT TEXT  (search: alt=)
-      17. "NGT Studio logo"       -> fine as is
-      18. The 6 project images    -> describe each project properly
+      14. "NGT Studio logo"       -> fine as is
+      15. The 6 project images    -> describe each project properly
             1 website + 5 designs, replace the whole alt="REPLACE: ..." value
+            The 5 Designs cards have no visible text, so their alt text is
+            the only description a visitor or Google gets.
 
     HANDSHAKE ANIMATION
-      - Every WhatsApp button (Let's Chat, Send Enquiry, the 3 Get Started
+      - Every WhatsApp button (Send Enquiry, the 3 Get Started
         buttons and the floating button) shows the handshake for 2 seconds
         before WhatsApp opens.
       - To change the wait, edit EMOJI_HOLD_MS in the script at the bottom.
