@@ -614,6 +614,14 @@
             background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
         }
 
+        /* The Websites cards hold phone screenshots, which are tall. The
+           default 4/3 frame is landscape and would crop most of the width
+           away, so those two cards get a portrait frame instead. The Designs
+           cards keep 4/3 because their images are landscape. */
+        .work-grid-web .work-media {
+            aspect-ratio: 9/16;
+        }
+
         .work-media img {
             display: block;
             width: 100%;
@@ -1593,12 +1601,13 @@
 
         <!-- ---------- Websites ---------- -->
         <h3 class="sub-title"><i class="fas fa-laptop-code"></i> Websites</h3>
-        <div class="work-grid">
+        <div class="work-grid work-grid-web">
 
-            <!-- REPLACE: the image src (add your screenshot). No alt text on this one. -->
+            <!-- REPLACE: the title, the description and the Visit site href.
+                 The screenshot is in place and neither card uses alt text. -->
             <article class="work-card animate-on-scroll" style="--accent: #48dbfb;">
                 <div class="work-media">
-                    <img src="WhatsApp Image 2026-04-16 at 12.36.38 PM.jpeg">
+                    <img src="WhatsApp Image 2026-10-05 at 4.11.36 PM.jpeg">
                 </div>
                 <div class="work-body">
                     <h3>Kingsley Jackson Consults</h3>
@@ -1609,12 +1618,11 @@
                 </div>
             </article>
 
-            <!-- REPLACE: the image src. Add a screenshot of the 6thwearz site
-                 to this folder and make the file name match exactly, or the
-                 card shows a broken image. No alt text on this one either. -->
+            <!-- REPLACE: the title, the description and the Visit site href.
+                 The screenshot is in place and no alt text is used. -->
             <article class="work-card animate-on-scroll" style="--accent: #ff9ff3;">
                 <div class="work-media">
-                    <img src="6thwearz-screenshot.jpg">
+                    <img src="WhatsApp Image 2026-10-05 at 4.11.37 PM.jpeg">
                 </div>
                 <div class="work-body">
                     <h3>6thwearz</h3>
@@ -2066,11 +2074,9 @@
     OUR WORK - WEBSITES  (2 cards)
       9.  Kingsley Jackson Consults   -> https://kingjackconsults-nine.vercel.app/
       10. 6thwearz                     -> https://business-2-three.vercel.app/
-            Neither card has alt text. Both still need a screenshot: the
-            Kingsley image is a placeholder, and the 6thwearz card points at
-            "6thwearz-screenshot.jpg", which is not in the folder yet - that
-            card shows a broken image until you add the file and match the
-            name exactly.
+            Screenshots are in place and neither card uses alt text. These two
+            cards use a portrait frame (9/16) because phone screenshots are
+            tall - the Designs cards below stay at 4/3.
             TO ADD MORE WEBSITES: copy a card and change the image, the
             title, the description and the Visit site href.
 
