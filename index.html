@@ -752,6 +752,13 @@
             margin: 0 auto;
         }
 
+        /* A single card would otherwise stretch across the full grid, so cap
+           it to one readable column. Add a second testimonial and this rule
+           switches itself off on its own. */
+        .testimonials-grid:has(> .testimonial-card:only-child) {
+            max-width: 460px;
+        }
+
         .testimonial-card {
             position: relative;
             background: linear-gradient(145deg, #ffffff, #f8f8f8);
@@ -790,10 +797,14 @@
             gap: 12px;
         }
 
-        /* Avatar shows the client's initials - no photo file needed */
+        /* Avatar shows the client's company logo on top of their initials.
+           The logo sits in a wide box because company logos are wordmarks,
+           not squares. If the logo file is missing, the script at the bottom
+           of the page removes the image and the initials are left showing. */
         .testimonial-card .avatar {
-            flex: 0 0 44px;
-            width: 44px;
+            position: relative;
+            flex: 0 0 auto;
+            width: 96px;
             height: 44px;
             display: flex;
             align-items: center;
@@ -803,7 +814,18 @@
             font-size: 0.85rem;
             color: #ffffff;
             background: var(--accent);
-            border-radius: 50%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .testimonial-card .avatar img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 6px 8px;
+            background: #ffffff;
         }
 
         .testimonial-card .client-name {
@@ -1487,6 +1509,7 @@
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#skills">Our Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#work">Our Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1793,46 +1816,26 @@
     </section>
 
     <!-- Testimonials Section
-         REPLACE: initials, name, company and quote in all three cards. -->
+         REPLACE: initials, name, company and quote.
+         Add a second card by copying the one below - the grid and the
+         single-card width rule both adjust themselves. -->
     <section class="testimonials" id="testimonials">
         <h2 class="section-title">Testimonials</h2>
         <div class="testimonials-grid">
 
-            <!-- REPLACE: this whole testimonial -->
+            <!-- REPLACE: the logo file name and the initials fallback.
+                 If the logo file is missing, the initials are shown instead. -->
             <div class="testimonial-card animate-on-scroll" style="--accent: #ff6b6b;">
                 <i class="fas fa-quote-right quote-mark" aria-hidden="true"></i>
-                <p class="quote">"[TESTIMONIAL QUOTE - what the client said about the work and the experience.]"</p>
+                <p class="quote">"I salute your creativity in creating a website for the firm, this innovation will bring visibility to a wider global audience."</p>
                 <div class="client">
-                    <div class="avatar" aria-hidden="true">CN</div>
-                    <div>
-                        <div class="client-name">[CLIENT NAME]</div>
-                        <div class="client-company">[COMPANY]</div>
+                    <div class="avatar">
+                        <img src="WhatsApp Image 2026-10-05 at 1.21.49 PM.jpeg" alt="Kingsley-Jackson Consults logo">
+                        <span class="avatar-initials">KJ</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- REPLACE: this whole testimonial -->
-            <div class="testimonial-card animate-on-scroll" style="--accent: #48dbfb;">
-                <i class="fas fa-quote-right quote-mark" aria-hidden="true"></i>
-                <p class="quote">"[TESTIMONIAL QUOTE - what the client said about the work and the experience.]"</p>
-                <div class="client">
-                    <div class="avatar" aria-hidden="true">CN</div>
                     <div>
-                        <div class="client-name">[CLIENT NAME]</div>
-                        <div class="client-company">[COMPANY]</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- REPLACE: this whole testimonial -->
-            <div class="testimonial-card animate-on-scroll" style="--accent: #feca57;">
-                <i class="fas fa-quote-right quote-mark" aria-hidden="true"></i>
-                <p class="quote">"[TESTIMONIAL QUOTE - what the client said about the work and the experience.]"</p>
-                <div class="client">
-                    <div class="avatar" aria-hidden="true">CN</div>
-                    <div>
-                        <div class="client-name">[CLIENT NAME]</div>
-                        <div class="client-company">[COMPANY]</div>
+                        <div class="client-name">Kingsley Anthony Jackson</div>
+                        <div class="client-company">Kingsley-Jackson Consults</div>
                     </div>
                 </div>
             </div>
@@ -2061,6 +2064,15 @@
             });
         });
 
+        // Testimonial logo fallback
+        // The company logo sits on top of the client's initials in the
+        // testimonial avatar. If the logo file is missing or the file name is
+        // wrong, the image is removed so the initials show on their own
+        // instead of a broken image icon.
+        document.querySelectorAll('.testimonial-card .avatar img').forEach(img => {
+            img.addEventListener('error', () => img.remove());
+        });
+
         // Lightbox functionality
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -2171,15 +2183,18 @@
             "ADD MORE DESIGNS BELOW" and change the image, the title,
             the description and the alt text.
 
-    TESTIMONIALS  (3 cards)
-      16. [CLIENT NAME]           -> client name, one per card
-      17. [COMPANY]               -> client company, one per card
-      18. [TESTIMONIAL QUOTE]     -> the quote, one per card
-      19. The initials in each .avatar (currently "CN") -> match the client name
+    TESTIMONIALS  (1 card - Kingsley Anthony Jackson)
+      16. The logo file name in the testimonial .avatar -> currently
+            "WhatsApp Image 2026-10-05 at 1.21.49 PM.jpeg". If that file is
+            missing the initials "KJ" are shown instead, so the card still
+            looks right.
+            TO ADD MORE TESTIMONIALS: copy the card, change the logo file,
+            the initials, the name, the company, the quote and the --accent
+            colour. The grid and the single-card width rule adjust themselves.
 
     ALT TEXT  (search: alt=)
-      20. "NGT Studio logo"       -> fine as is
-      21. The 6 project images    -> describe each project properly
+      17. "NGT Studio logo"       -> fine as is
+      18. The 6 project images    -> describe each project properly
             1 website + 5 designs, replace the whole alt="REPLACE: ..." value
 
     HANDSHAKE ANIMATION
