@@ -156,30 +156,6 @@
             width: 100%;
         }
 
-        /* "Get a Quote" button in the navigation bar (scrolls to Contact) */
-        .nav-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 22px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #ffffff;
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
-            border-radius: 50px;
-            text-decoration: none;
-            white-space: nowrap;
-            box-shadow: 0 8px 20px -8px rgba(255, 107, 107, 0.65);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            color: #ffffff;
-            box-shadow: 0 12px 26px -8px rgba(255, 107, 107, 0.8);
-        }
-
         /* Hero Section
            NOTE: the background image below is the same JPEG as the logo.
            Keep the file name as-is or the hero AND the logo will both break. */
@@ -460,6 +436,15 @@
             margin: 0 auto;
         }
 
+        .pricing-fineprint {
+            text-align: center;
+            max-width: 640px;
+            margin: 30px auto 0;
+            font-size: 0.8rem;
+            color: #888;
+            font-family: 'Poppins', sans-serif;
+        }
+
         .price-card {
             position: relative;
             background: linear-gradient(145deg, #ffffff, #f8f8f8);
@@ -478,13 +463,13 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
         }
 
-        /* The middle package sits slightly proud of the other two */
+        /* The most popular package is called out with a bordered highlight */
         .price-card.popular {
             border-color: var(--accent);
             box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.4);
         }
 
-        .price-card.popular-tag {
+        .popular-tag {
             position: absolute;
             top: -13px;
             left: 50%;
@@ -556,7 +541,8 @@
             color: var(--accent-deep);
         }
 
-        /* "Get Started" button - opens WhatsApp with the package name pre-filled */
+        /* "Send Enquiry" button - scrolls to the contact form and fills in
+           the package name. Colours come from each card's --accent. */
         .price-btn {
             display: inline-flex;
             align-items: center;
@@ -568,7 +554,7 @@
             font-weight: 600;
             font-size: 0.9rem;
             color: #ffffff;
-            background: linear-gradient(135deg, #25d366, #128c7e);
+            background: linear-gradient(135deg, var(--accent-deep), color-mix(in srgb, var(--accent-deep) 70%, var(--accent)));
             border-radius: 50px;
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -577,7 +563,7 @@
         .price-btn:hover {
             transform: translateY(-3px);
             color: #ffffff;
-            box-shadow: 0 14px 30px rgba(37, 211, 102, 0.35);
+            box-shadow: 0 14px 30px color-mix(in srgb, var(--accent-deep) 45%, transparent);
         }
 
         /* Our Work Section */
@@ -1101,13 +1087,113 @@
             100% { transform: scale(1.5); opacity: 0; }
         }
 
-        /* Footer */
-        footer {
+        /* Footer - arranged like the King Jack Consults footer
+         (4 side-by-side columns + a full-width copyright bar) */
+        .site-footer {
             background: #f0f0f0;
-            padding: 30px;
-            text-align: center;
             color: #555;
             font-size: 0.9rem;
+            padding: 50px 0 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-row {
+            flex: 0 0 calc(25% - 30px);
+            min-width: 200px;
+        }
+
+        .footer-row h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0a0a0a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .footer-row ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-row li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-row a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-row a:hover {
+            color: #ff6b6b;
+        }
+
+        .footer-row p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-right: 12px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #e8e8e8;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #ffffff;
+        }
+
+        .social-icons a i {
+            font-size: 1.2rem;
+            color: #777;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover i {
+            color: #ff6b6b;
+        }
+
+        .contact-info li i {
+            margin-right: 8px;
+            color: #000;
+        }
+
+        .copyright {
+            background: #e6e6e6;
+            color: #777;
+            padding: 16px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+
+        .copyright p {
+            margin: 0;
         }
 
         footer span {
@@ -1231,6 +1317,10 @@
                 padding: 12px 15px;
             }
 
+            .footer-row {
+                flex: 0 0 calc(50% - 30px);
+            }
+
             nav ul {
                 display: none;
                 position: absolute;
@@ -1302,12 +1392,6 @@
         @media (max-width: 480px) {
             nav .logo {
                 font-size: 1.2rem;
-            }
-
-            .nav-cta {
-                padding: 9px 16px;
-                font-size: 0.78rem;
-                gap: 6px;
             }
 
             .about-content p {
@@ -1387,9 +1471,17 @@
                 font-size: 5rem;
             }
 
-            footer {
-                padding: 20px;
+            .site-footer {
                 font-size: 0.8rem;
+            }
+
+            .footer-row {
+                flex: 0 0 100%;
+            }
+
+            .footer-grid {
+                flex-direction: column;
+                gap: 34px;
             }
         }
 
@@ -1401,15 +1493,6 @@
 
             nav .logo {
                 font-size: 1rem;
-            }
-
-            .nav-cta {
-                padding: 8px 13px;
-                font-size: 0.72rem;
-            }
-
-            .nav-cta i {
-                display: none;
             }
 
             .sub-title {
@@ -1433,10 +1516,6 @@
             <li><a href="#work">Our Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <!-- "Get a Quote" scrolls down to the Contact section -->
-        <a href="#contact" class="nav-cta">
-            <i class="fas fa-quote-right"></i> Get a Quote
-        </a>
         <div class="menu-toggle" id="menu-toggle">
             <span></span>
             <span></span>
@@ -1527,7 +1606,8 @@
 
     <!-- Pricing Section
          REPLACE: the three "Starting from" amounts below with your own prices.
-         Every "Get Started" button opens WhatsApp with that package name pre-filled. -->
+         Every "Send Enquiry" button scrolls to the contact form and fills in
+         the package name that was clicked. -->
     <section class="pricing" id="pricing">
         <h2 class="section-title">Pricing</h2>
         <p class="section-note animate-on-scroll">
@@ -1537,9 +1617,10 @@
         <div class="pricing-grid">
 
             <!-- ============ STARTER ============ -->
-            <div class="price-card animate-on-scroll" style="--accent: #48dbfb; --accent-deep: #0b7285;">
+            <div class="price-card popular animate-on-scroll" style="--accent: #48dbfb; --accent-deep: #0b7285;">
+                <span class="popular-tag">Most Popular</span>
                 <h3>Starter</h3>
-                <p class="price">Starting from<!-- REPLACE: Starter price --><span class="amount">₦150,000</span></p>
+                <p class="price">Starting from<!-- REPLACE: Starter price --><span class="amount">₦200,000</span></p>
                 <ul>
                     <li>1 to 3 page responsive website</li>
                     <li>Looks great on every phone size</li>
@@ -1547,14 +1628,13 @@
                     <li>Free SSL security and speed setup</li>
                     <li>WhatsApp chat button on every page</li>
                 </ul>
-                <a href="https://wa.me/2348145173339?text=Hi%20NGT%20Studio%2C%20I%27m%20interested%20in%20the%20Starter%20package." class="price-btn" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Get Started
+                <a href="#contact" class="price-btn" data-package="Starter">
+                    <i class="fas fa-paper-plane"></i> Send Enquiry
                 </a>
             </div>
 
             <!-- ============ BUSINESS ============ -->
-            <div class="price-card popular animate-on-scroll" style="--accent: #ff6b6b; --accent-deep: #e03131;">
-                <span class="popular-tag">Most Popular</span>
+            <div class="price-card animate-on-scroll" style="--accent: #ff6b6b; --accent-deep: #e03131;">
                 <h3>Business</h3>
                 <p class="price">Starting from<!-- REPLACE: Business price --><span class="amount">₦350,000</span></p>
                 <ul>
@@ -1564,8 +1644,8 @@
                     <li>SEO basics so Google can find you</li>
                     <li>Google Analytics setup</li>
                 </ul>
-                <a href="https://wa.me/2348145173339?text=Hi%20NGT%20Studio%2C%20I%27m%20interested%20in%20the%20Business%20package." class="price-btn" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Get Started
+                <a href="#contact" class="price-btn" data-package="Business">
+                    <i class="fas fa-paper-plane"></i> Send Enquiry
                 </a>
             </div>
 
@@ -1580,12 +1660,13 @@
                     <li>3 rounds of revisions</li>
                     <li>Full on-page SEO and priority support</li>
                 </ul>
-                <a href="https://wa.me/2348145173339?text=Hi%20NGT%20Studio%2C%20I%27m%20interested%20in%20the%20Premium%20package." class="price-btn" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Get Started
+                <a href="#contact" class="price-btn" data-package="Premium">
+                    <i class="fas fa-paper-plane"></i> Send Enquiry
                 </a>
             </div>
 
         </div>
+        <p class="pricing-fineprint">Prices cover design and development. Domain and hosting are renewed yearly and billed separately.</p>
     </section>
 
     <!-- Our Work Section
@@ -1734,9 +1815,9 @@
     </section>
 
     <!-- Testimonials Section
-         REPLACE: initials, name, company and quote.
-         Add a second card by copying the one below - the grid and the
-         single-card width rule both adjust themselves. -->
+         2 cards - Kingsley Anthony Jackson, Kufre Lawrence.
+         REPLACE: initials, name, company and quote on either card.
+         The grid and the single-card width rule adjust themselves. -->
     <section class="testimonials" id="testimonials">
         <h2 class="section-title">Testimonials</h2>
         <div class="testimonials-grid">
@@ -1754,6 +1835,23 @@
                     <div>
                         <div class="client-name">Kingsley Anthony Jackson</div>
                         <div class="client-company">Kingsley-Jackson Consults</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REPLACE: the logo file name and the initials fallback.
+                 If the logo file is missing, the initials are shown instead. -->
+            <div class="testimonial-card animate-on-scroll" style="--accent: #ff9ff3;">
+                <i class="fas fa-quote-right quote-mark" aria-hidden="true"></i>
+                <p class="quote">"I wanted a proper online store for 6thWearz and NGT Studio delivered exactly that — product listings, a cart and an enquiry form, all working well. They understood the brand and delivered on time."</p>
+                <div class="client">
+                    <div class="avatar">
+                        <img src="WhatsApp Image 2026-10-06 at 4.22.19 PM.jpeg" alt="6thWearz logo">
+                        <span class="avatar-initials">KL</span>
+                    </div>
+                    <div>
+                        <div class="client-name">Kufre Lawrence</div>
+                        <div class="client-company">6thWearz</div>
                     </div>
                 </div>
             </div>
@@ -1812,16 +1910,55 @@
         <img class="lightbox-img" id="lightbox-img" src="" alt="Enlarged project image">
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Designed by Nengimote Nengite</p>
+    <!-- Footer - arranged like the King Jack Consults footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+
+            <div class="footer-row">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#skills">Our Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#work">Our Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-row">
+                <h4>Follow Us</h4>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/share/18EaCadkzp/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/ngtstudio2026" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.tiktok.com/@ngtstudio2026" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-row">
+                <h4>Let's Discuss Your Project</h4>
+                <ul class="contact-info">
+                    <li><a href="https://wa.me/2348145173339" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> 0814 517 3339</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-row">
+                <h4>NGT Studio</h4>
+                <p>Delivering quality websites and designs for businesses, built to look great and get found online.</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 NGT Studio. All rights reserved. | Designed by <span>Nengimote Nengite</span></p>
+        </div>
     </footer>
 
     <script>
         // ============================================================
         //  Your WhatsApp number in international format: digits only,
         //  country code first, no "+" and no spaces.
-        //  Used by the pricing buttons, the floating button and the form.
+        //  Used by the floating button and the form.
         //  REPLACE if your number ever changes.
         // ============================================================
         const WHATSAPP_NUMBER = '2348145173339';
@@ -1856,7 +1993,7 @@
         // ============================================================
         //  WhatsApp + handshake emoji
         //  Every WhatsApp action on the page (the enquiry
-        //  form, the pricing Get Started buttons and the floating button)
+        //  form and the floating button)
         //  runs through these two helpers, so they all behave the same.
         // ============================================================
 
@@ -1915,8 +2052,8 @@
             });
         };
 
-        // Catches the 3 pricing Get Started buttons and the floating
-        // WhatsApp button in one go.
+        // Catches the floating WhatsApp button. The 3 pricing buttons no
+        // longer open WhatsApp - they scroll to the contact form instead.
         document.querySelectorAll('a[href*="wa.me"]').forEach(animateWhatsAppLink);
 
         // Scroll Animation
@@ -1938,7 +2075,7 @@
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
 
-        // Smooth scroll for navigation ("Get a Quote", menu links, footer links)
+        // Smooth scroll for navigation, menu and footer links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -1955,6 +2092,21 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
+            });
+        });
+
+        // Pricing "Send Enquiry" buttons: after the smooth scroll above runs,
+        // pre-fill the enquiry form so it says which package was clicked.
+        const eqMessage = document.getElementById('eq-message');
+        document.querySelectorAll('.price-btn[data-package]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const line = `I'm interested in the ${btn.dataset.package} package.`;
+
+                if (!eqMessage.value.trim()) {
+                    eqMessage.value = line;
+                } else if (!eqMessage.value.includes(line)) {
+                    eqMessage.value = eqMessage.value.trimEnd() + '\n' + line;
+                }
             });
         });
 
@@ -2067,7 +2219,7 @@
             change them all together if you move the site)
 
     PRICING  (search: REPLACE: )
-      6.  Starter price           -> currently ₦150,000
+      6.  Starter price           -> currently ₦200,000
       7.  Business price          -> currently ₦350,000
       8.  Premium price           -> currently ₦650,000
 
@@ -2086,14 +2238,16 @@
             TO ADD MORE DESIGNS: copy the card marked
             "ADD MORE DESIGNS BELOW" and change the image and the alt text.
 
-    TESTIMONIALS  (1 card - Kingsley Anthony Jackson)
-      12. The logo file name in the testimonial .avatar -> currently
-            "WhatsApp Image 2026-10-05 at 1.21.49 PM.jpeg". If that file is
-            missing the initials "KJ" are shown instead, so the card still
-            looks right.
-            TO ADD MORE TESTIMONIALS: copy the card, change the logo file,
-            the initials, the name, the company, the quote and the --accent
-            colour. The grid and the single-card width rule adjust themselves.
+    TESTIMONIALS  (2 cards - Kingsley Anthony Jackson, Kufre Lawrence)
+      12. The logo file names in the testimonial .avatar tags ->
+            Kingsley card: "WhatsApp Image 2026-10-05 at 1.21.49 PM.jpeg"
+            Kufre card:   "WhatsApp Image 2026-10-06 at 4.22.19 PM.jpeg"
+            If a file is missing the initials ("KJ" or "KL") are shown
+            instead, so the card still looks right.
+            TO ADD MORE TESTIMONIALS: copy the last card, change the logo
+            file, the initials, the name, the company, the quote and the
+            --accent colour. The grid and the single-card width rule
+            adjust themselves.
 
     ALT TEXT  (search: alt=)
       13. "NGT Studio logo"       -> fine as is
@@ -2103,9 +2257,14 @@
             the only description a visitor or Google gets. The two Websites
             cards have no alt text by choice - leave them that way.
 
+    FOOTER SOCIAL LINKS  (search: "REPLACE:" before the Follow Us icons)
+      15. Facebook   -> replace href="#" with your facebook.com/... URL
+      16. Instagram  -> replace href="#" with your instagram.com/... URL
+      17. TikTok     -> replace href="#" with your tiktok.com/@... URL
+
     HANDSHAKE ANIMATION
-      - Every WhatsApp button (Send Enquiry, the 3 Get Started
-        buttons and the floating button) shows the handshake for 2 seconds
+      - Every WhatsApp button (the form's Send Enquiry on WhatsApp
+        button and the floating button) shows the handshake for 2 seconds
         before WhatsApp opens.
       - To change the wait, edit EMOJI_HOLD_MS in the script at the bottom.
         EMOJI_HOLD_MS = 2000  ->  set to 0 to open WhatsApp instantly.
